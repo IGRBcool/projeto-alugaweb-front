@@ -1,4 +1,5 @@
 let imoveis = [];
+
 function abrirMenu(){
     let overlay = document.querySelector("#overlay");
     let menu = document.querySelector("#menu");
@@ -14,6 +15,17 @@ function fecharMenu(){
     menu.classList.add("-left-[80%]");
 }
 
+function filtrarPreco() {
+    let input1 = document.querySelector("#precode").value
+    let input2 = document.querySelector("#precoate").value
+
+    let newPesquisa = imoveis.filter(element => {
+        return element.valor > input1 && element.valor < input2
+    })
+    carregarImoveis(newPesquisa)
+}
+
+
 async function buscarImoveis(){
     try {
         const request = await fetch("http://localhost:3000/imoveis");
@@ -23,7 +35,7 @@ async function buscarImoveis(){
             return
         }
 
-     imoveis = await request.json();
+        imoveis = await request.json();
         
         carregarImoveis(imoveis);
 
