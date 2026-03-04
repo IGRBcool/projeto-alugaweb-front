@@ -102,4 +102,10 @@ function carregarImoveis(listaDeImoveis){
             </div>
         `;
     })
+
+}
+function filtrarGaragem(numero){
+    let imoveisFiltrados = imoveis.filter(imovel => imovel.garagens == numero);
+    carregarImoveis(imoveisFiltrados);   
+ 
 }
