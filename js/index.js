@@ -1,3 +1,4 @@
+let imoveis = [];
 function abrirMenu(){
     let overlay = document.querySelector("#overlay");
     let menu = document.querySelector("#menu");
@@ -22,7 +23,7 @@ async function buscarImoveis(){
             return
         }
 
-        const imoveis = await request.json();
+     imoveis = await request.json();
         
         carregarImoveis(imoveis);
 
@@ -89,4 +90,10 @@ function carregarImoveis(listaDeImoveis){
             </div>
         `;
     })
+
+}
+function filtrarGaragem(numero){
+    let imoveisFiltrados = imoveis.filter(imovel => imovel.garagens == numero);
+    carregarImoveis(imoveisFiltrados);   
+ 
 }
