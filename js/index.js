@@ -1,3 +1,5 @@
+let imoveis = [];
+
 function abrirMenu(){
     let overlay = document.querySelector("#overlay");
     let menu = document.querySelector("#menu");
@@ -12,6 +14,17 @@ function fecharMenu(){
     menu.classList.remove("left-0");
     menu.classList.add("-left-[80%]");
 }
+
+function filtrarPreco() {
+    let input1 = document.querySelector("#precode").value
+    let input2 = document.querySelector("#precoate").value
+
+    let newPesquisa = imoveis.filter(element => {
+        return element.valor > input1 && element.valor < input2
+    })
+    carregarImoveis(newPesquisa)
+}
+
 
 async function buscarImoveis(){
     try {
@@ -104,4 +117,11 @@ function filtrarApartamento(){
     carregarImoveis(apsFiltrados);
 
      
+}
+
+}
+function filtrarGaragem(numero){
+    let imoveisFiltrados = imoveis.filter(imovel => imovel.garagens == numero);
+    carregarImoveis(imoveisFiltrados);   
+ 
 }
