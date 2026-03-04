@@ -111,12 +111,12 @@
                 <div class="border-b border-stone-300 flex gap-4 px-7 py-[34px] ">
                     <div class="flex-1">
                      <span class="font-bold text-cinza ">Preço à partir de</span>
-                        <input class="w-full h-[54px] bg-black/5 rounded-lg pl-3 border border-stone-300" type="number" placeholder="0">
+                        <input id="precode" class="w-full h-[54px] bg-black/5 rounded-lg pl-3 border border-stone-300" type="number" placeholder="0">
                     </div>
 
                     <div class="flex-1">
                         <span class="font-bold text-cinza">Até</span>
-                        <input class="w-full h-[54px] bg-black/5 rounded-lg pl-3 border border-stone-300" type="number" placeholder="0">
+                        <input onchange="filtrarPreco()" id="precoate" class="w-full h-[54px] bg-black/5 rounded-lg pl-3 border border-stone-300" type="number" placeholder="0">
                     </div>
                 </div>
                 <div class="px-7 py-[34px] border-b border-stone-300 font-semibold">
